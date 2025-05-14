@@ -1,0 +1,75 @@
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\appsettings.Development.json
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\appsettings.json
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Prédio Comercial.staticwebassets.runtime.json
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Prédio Comercial.exe
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Prédio Comercial.deps.json
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Prédio Comercial.runtimeconfig.json
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Prédio Comercial.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Prédio Comercial.pdb
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Azure.Core.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Azure.Identity.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Humanizer.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\System.CodeDom.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\System.Memory.Data.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\System.Runtime.Caching.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\Prédio Comercial.csproj.AssemblyReference.cache
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\Prédio Comercial.GeneratedMSBuildEditorConfig.editorconfig
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\Prédio Comercial.AssemblyInfoInputs.cache
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\Prédio Comercial.AssemblyInfo.cs
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\Prédio Comercial.csproj.CoreCompileInputs.cache
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\Prédio Comercial.MvcApplicationPartsAssemblyInfo.cache
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\Prédio Comercial.RazorAssemblyInfo.cache
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\Prédio Comercial.RazorAssemblyInfo.cs
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\staticwebassets\msbuild.Prédio Comercial.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\staticwebassets\msbuild.build.Prédio Comercial.props
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Prédio Comercial.props
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Prédio Comercial.props
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\staticwebassets.build.json
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\staticwebassets.development.json
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\scopedcss\bundle\Prédio Comercial.styles.css
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\scopedcss\projectbundle\Prédio Comercial.bundle.scp.css
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\Prédio Comercial.csproj.CopyComplete
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\Prédio Comercial.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\refint\Prédio Comercial.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\Prédio Comercial.pdb
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\Prédio Comercial.genruntimeconfig.cache
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\ref\Prédio Comercial.dll
