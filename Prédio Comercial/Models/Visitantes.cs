@@ -7,8 +7,9 @@ namespace Prédio_Comercial.Models
         [Key]
         public int Id { get; set; }
         [Required]
+        [StringLength(50)]
         public string? Name { get; set; }
-        [MaxLength(14)]
+        [StringLength(14)]
         public string? Documento { get; set; }
         [Required]
         public string? Empresa { get; set; }
