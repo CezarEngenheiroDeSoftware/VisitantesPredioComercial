@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Prédio_Comercial.Models.Visitantes>;
+
+<h2 class="card-subtitle">Lista De Visitantes</h2>
+
+<table class="table-light">
+    <thead>
+       <tr>
+        <th>@Html.DisplayNameFor(model=>model.Name)</th>
+        <th>@Html.DisplayNameFor(model=>model.Documento)</th>
+        <th>@Html.DisplayNameFor(model=>model.Empresa)</th>
+        <th>@Html.DisplayNameFor(model=>model.Dataentrada)</th>
+        <th>@Html.DisplayNameFor(model=>model.DataSaida)</th>
+        <th>@Html.DisplayNameFor(model=>model.MotivoVisita)</th>
+        <th>@Html.DisplayNameFor(model=>model.VisitandoQuem)</th>
+        <th></th>
+       </tr>
+    </thead>
+    <tbody>
+        @foreach(var x in Model)
+        {
+            <tr>   
+                <td>@Html.DisplayFor(modelitem=> x.Name)</td>
+            
+            
+                <td>@Html.DisplayFor(modelitem=> x.Documento)</td>
+           
+            
+                <td>@Html.DisplayFor(modelitem=> x.Empresa)</td>
+            
+            
+                <td>@Html.DisplayFor(modelitem=> x.Dataentrada)</td>
+            
+            
+                <td>@Html.DisplayFor(modelitem=> x.DataSaida)</td>
+            
+            
+                <td>@Html.DisplayFor(modelitem=> x.MotivoVisita)</td>
+            
+            
+                <td>@Html.DisplayFor(modelitem=> x.VisitandoQuem)</td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@Html.DisplayFor(modelitem =>x.Id)" class="btn btn-primary">Editar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-controller="Visitantes" asp-action="Index" class="btn btn-light">Voltar</a>
+
