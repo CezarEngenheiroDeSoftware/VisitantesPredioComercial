@@ -1,0 +1,49 @@
+﻿@model Prédio_Comercial.Models.Visitantes;
+
+<form asp-controller="Visitantes" asp-action="DeletarVisitante" asp-route-id="@Model.Id" id="formDeletarVisitante">
+    <input asp-for="Id" type="hidden" />
+    <div class="col-4">
+
+        <label asp-for="Name">Nome:</label>
+        <input asp-for="Name" type="text" readonly class="form-control" />
+
+    </div>
+    <div class="col-4">
+        <label asp-for="Documento">RG/CPF:</label>
+        <input asp-for="Documento" readonly type="text" placeholder="000.000.000-00" class="form-control " />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="col-4">
+        <label asp-for="Empresa">Empresa</label>
+        <input asp-for="Empresa" type="text" readonly class="form-control" />
+        <span asp-validation-for="Empresa" class="text-danger"></span>
+
+    </div>
+
+    <div class="col-4">
+        <label asp-for="Dataentrada">Data da Entrada</label>
+        <input asp-for="Dataentrada" readonly type="datetime-local" class="form-control" />
+        <span asp-validation-for="Dataentrada" class="text-danger"></span>
+
+    </div>
+    <div class="col-4">
+        <label asp-for="DataSaida">Data da Saída</label>
+        <input asp-for="DataSaida" readonly type="datetime-local" class="form-control" />
+        <span asp-validation-for="DataSaida" class="text-danger"></span>
+
+    </div>
+    <div class="col-4">
+        <label asp-for="MotivoVisita">Motivo da Visita</label>
+        <input asp-for="MotivoVisita" readonly type="text" class="form-control" />
+        <span asp-validation-for="MotivoVisita" class="text-danger"></span>
+
+    </div>
+    <div class="col-4">
+        <label asp-for="VisitandoQuem">Quem visitou</label>
+        <input asp-for="VisitandoQuem" readonly type="text" class="form-control" />
+        <span asp-validation-for="VisitandoQuem" class="text-danger"></span>
+
+    </div>
+    <button class="btn btn-primary" type="submit">Deletar</button>
+</form>
+<a asp-controller="Visitantes" asp-action="ListaVisitantes" class="btn btn-light">Voltar</a>

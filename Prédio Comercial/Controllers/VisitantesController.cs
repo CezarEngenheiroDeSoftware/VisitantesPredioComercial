@@ -56,11 +56,25 @@ namespace Prédio_Comercial.Controllers
             }
             return BadRequest("Não foi possível Editar o cadastro");
         }
-        public async Task<IActionResult> DeletarVisitante(Visitantes visitantes)
+        public async Task<IActionResult> Deletar(int? id)
         {
-            _context.Visitantes.Remove(visitantes);
+            var visitante = await _context.Visitantes.FindAsync(id);
+            if(visitante == null) return BadRequest();
+            return PartialView("Deletar", visitante);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeletarVisitante(int? id)
+        {
+            if (id == null) return BadRequest();
+
+            var visitante = await _context.Visitantes.FindAsync(id);
+            if (visitante == null) return NotFound();
+
+            _context.Visitantes.Remove(visitante);
             await _context.SaveChangesAsync();
-            return RedirectToAction("ListaVisitantes");
+
+            return Ok();
         }
     }
 }
