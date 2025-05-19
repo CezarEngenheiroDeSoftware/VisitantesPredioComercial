@@ -32,12 +32,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Prédio Comercial/Prédio Comercial/Prédio Comercial/Views/Visitantes/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRhbnRlc1xFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Prédio Comercial/Prédio Comercial/Prédio Comercial/Views/Visitantes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRhbnRlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Prédio Comercial/Prédio Comercial/Prédio Comercial/Views/Visitantes/ListaVisitantes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRhbnRlc1xMaXN0YVZpc2l0YW50ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Prédio Comercial/Prédio Comercial/Prédio Comercial/Views/Visitantes/_EditarVisitante.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRhbnRlc1xfRWRpdGFyVmlzaXRhbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Prédio Comercial/Prédio Comercial/Prédio Comercial/Views/_ViewImports.cshtml]
