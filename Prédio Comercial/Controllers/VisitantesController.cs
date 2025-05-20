@@ -25,7 +25,7 @@ namespace Prédio_Comercial.Controllers
         }
         public async Task<IActionResult> ListaVisitantesAtivo()
         {
-            var visitantesAtivos = await _context.Visitantes.Where(x=>x.DataSaida != null).ToListAsync();
+            var visitantesAtivos = await _context.Visitantes.Where(x=>x.DataSaida == null).ToListAsync();
             if (visitantesAtivos == null) return BadRequest();
             return View(visitantesAtivos);
         }
@@ -71,6 +71,11 @@ namespace Prédio_Comercial.Controllers
             visitante.DataSaida = visitantes.DataSaida;
             await _context.SaveChangesAsync();
             return Ok();
+        }
+        public async Task<IActionResult> DarSaidaView(int? id)
+        {
+            var saindoVisita = await _context.Visitantes.FindAsync(id);
+            return PartialView("DarSaida", saindoVisita);
         }
         public async Task<IActionResult> Deletar(int? id)
         {

@@ -1,0 +1,14 @@
+﻿@model Prédio_Comercial.Models.Visitantes;
+
+<form asp-controller="Visitantes" asp-action="DarSaida">
+    <input type="hidden" asp-for="Id" />
+    <div class="col-4">
+        <label asp-for="DataSaida">Data da Saída</label>
+        <input asp-for="DataSaida" type="datetime-local" class="form-control" />
+        <span asp-validation-for="DataSaida" class="text-danger"></span>
+
+    </div>
+    <button class="btn btn-primary" type="submit">Salvar</button>
+    <a asp-controller="Visitantes" asp-action="ListaVisitantes" class="btn btn-light">Cancelar</a>
+
+</form>
