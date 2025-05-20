@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Prédio_Comercial.Models.Visitantes>;
 
 <h2 class="card-subtitle">Lista De Visitantes</h2>
-
+<a asp-controller="Visitantes" asp-action="ListaVisitantesAtivo" class="btn btn-info">Visitantes no Prédio</a>
 <table class="table table-light">
     <thead>
        <tr>
@@ -145,7 +145,6 @@
                 }
             });
         });
-
     });
 </script>
 

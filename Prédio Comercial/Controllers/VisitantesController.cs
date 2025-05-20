@@ -20,7 +20,14 @@ namespace Prédio_Comercial.Controllers
         {
             //var visitasAtivas = await _context.Visitantes.Where(x=>x.DataSaida == null).ToListAsync();
             //return View(visitasAtivas);
+            
             return View(await _context.Visitantes.ToListAsync());
+        }
+        public async Task<IActionResult> ListaVisitantesAtivo()
+        {
+            var visitantesAtivos = await _context.Visitantes.Where(x=>x.DataSaida != null).ToListAsync();
+            if (visitantesAtivos == null) return BadRequest();
+            return View(visitantesAtivos);
         }
 
         public async Task<IActionResult> NovoVisitante(Visitantes visitantes)
@@ -55,6 +62,15 @@ namespace Prédio_Comercial.Controllers
                 return Ok();
             }
             return BadRequest("Não foi possível Editar o cadastro");
+        }
+        [HttpPost]
+        public async Task<IActionResult> DarSaida(int? id, [Bind("Id,DataSaida")] Visitantes visitantes)
+        {
+            var visitante = await _context.Visitantes.FindAsync(id);
+            if (visitante == null) return BadRequest();
+            visitante.DataSaida = visitantes.DataSaida;
+            await _context.SaveChangesAsync();
+            return Ok();
         }
         public async Task<IActionResult> Deletar(int? id)
         {
