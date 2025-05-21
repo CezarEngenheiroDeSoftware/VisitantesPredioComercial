@@ -1,10 +1,13 @@
 using Microsoft.EntityFrameworkCore;
+using Prédio_Comercial.Interface;
+using Prédio_Comercial.Repository;
 using Prédio_Comercial.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IUsuarios, UsuariosRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
