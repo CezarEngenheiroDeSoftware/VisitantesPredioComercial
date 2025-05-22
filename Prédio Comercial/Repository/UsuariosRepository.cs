@@ -14,6 +14,13 @@ namespace Prédio_Comercial.Repository
         {
             _context = applicationDbContext;
         }
+
+        public async Task<Usuarios> BuscarPorId(int id)
+        {
+            var usuarioId = await _context.Usuarios.FindAsync(id);
+            return usuarioId;
+        }
+
         public async Task<List<Usuarios>> BuscarTodos()
         {
             var usuarios = await _context.Usuarios.ToListAsync();
@@ -45,6 +52,10 @@ namespace Prédio_Comercial.Repository
         {
             var buscarPorId = await _context.Usuarios.FindAsync(id);
             usuarios.Id = buscarPorId.Id;
+            usuarios.Admin = buscarPorId.Admin;
+            usuarios.DataContratacao = buscarPorId.DataContratacao;
+            usuarios.Password = buscarPorId.Password;
+            usuarios.Login = buscarPorId.Login;
              _context.Usuarios.Update(usuarios);
             await _context.SaveChangesAsync();
             return usuarios;
