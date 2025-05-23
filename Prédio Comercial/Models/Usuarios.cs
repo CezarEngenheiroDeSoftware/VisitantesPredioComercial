@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Prédio_Comercial.Repository;
+using Prédio_Comercial.Service;
+using System.ComponentModel.DataAnnotations;
 
 namespace Prédio_Comercial.Models
 {
@@ -16,5 +18,11 @@ namespace Prédio_Comercial.Models
         public string Password { get; set; } = "";
         public DateTime? DataContratacao { get; set; } = DateTime.Now;
         public bool? Admin { get; set; } = false;
+
+        //public void SenhaHash(string senha)
+        //{
+        //    senha = Password.GerarHashSenha();
+            
+        //}
     }
 }

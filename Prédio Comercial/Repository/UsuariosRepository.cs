@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Prédio_Comercial.Interface;
 using Prédio_Comercial.Models;
 using Prédio_Comercial.Service;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Prédio_Comercial.Repository
 {
@@ -60,6 +62,20 @@ namespace Prédio_Comercial.Repository
             await _context.SaveChangesAsync();
             return usuarios;
             
+        }
+
+        public string GerarHash(string texto)
+        {
+            using (SHA256 sha256sha = SHA256.Create())
+            {
+                byte[] bytes = sha256sha.ComputeHash(Encoding.UTF8.GetBytes(texto));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
     }
 }

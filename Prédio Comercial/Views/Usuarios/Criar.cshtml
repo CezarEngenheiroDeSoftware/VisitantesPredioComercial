@@ -55,15 +55,21 @@
         
     </div>
     </form>
+
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
     <script>
-        //Aqui é uma função que pega o elemento que tiver o ID message para fechar, depois pega o elemento que tiver o ID button coloca o evento de click e chama a função 
+        //Aqui é uma função que pega o elemento que tiver o ID message para fechar,
+        //depois pega o elemento que tiver o ID button coloca o evento de click e chama a função 
         //FecharMensagem.//
-        $(document).ready(function () {
-            function FecharMensagem() {
+         $(document).ready(function () {
+        //     function FecharMensagem() {
+        //         $("#message").hide();
+        //     }
+        // $("#button").click(FecharMensagem);
+
+        $("#button").click(function fecharMenssagem() {
                 $("#message").hide();
-            }
-        $("#button").click(FecharMensagem);
+            });
         });
     </script>

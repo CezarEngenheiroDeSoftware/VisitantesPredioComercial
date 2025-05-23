@@ -10,5 +10,6 @@ namespace Prédio_Comercial.Interface
         Task<Usuarios> Editar(int id, Usuarios usuarios);
         Task<Usuarios> Criar(Usuarios usuarios);
         Task<Usuarios> Deletar(int id, Usuarios usuarios);
+        string GerarHash(string texto);
     }
 }
