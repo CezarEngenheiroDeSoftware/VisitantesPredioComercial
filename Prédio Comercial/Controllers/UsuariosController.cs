@@ -5,17 +5,17 @@ using Prédio_Comercial.Repository;
 
 namespace Prédio_Comercial.Controllers
 {
-    public class UsuariosControler : Controller
+    public class UsuariosController : Controller
     {
         private readonly IUsuarios _usuarios;
-        public UsuariosControler(IUsuarios usuarios)
+        public UsuariosController(IUsuarios usuarios)
         {
             _usuarios = usuarios;
         }
         public async Task<IActionResult> Index()
         {
                 var viewUsuario = await _usuarios.BuscarTodos();
-                return RedirectToAction("Index");
+                return View(viewUsuario);
         }
         public async Task<IActionResult> BuscarUsuario(int id)
         {
@@ -29,7 +29,7 @@ namespace Prédio_Comercial.Controllers
             if(usuarios == null) return NotFound();
             return View(usuarios);
         }
-        public async Task<IActionResult> Criar()
+        public IActionResult Criar()
         {
             return View();
         }
@@ -47,7 +47,7 @@ namespace Prédio_Comercial.Controllers
             {
                 ModelState.AddModelError(String.Empty, "Nâo foi possível criar usuário");
             }
-            return View(usuarios);
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> EditarUsuario(int id)

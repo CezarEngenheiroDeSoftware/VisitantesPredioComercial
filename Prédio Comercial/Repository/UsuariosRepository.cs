@@ -29,7 +29,7 @@ namespace Prédio_Comercial.Repository
 
         public async Task<Usuarios> Criar(Usuarios usuarios)
         {
-            await _context.Usuarios.AddAsync(usuarios);
+            _context.Usuarios.Add(usuarios);
             await _context.SaveChangesAsync();
             return usuarios;
         }

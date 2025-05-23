@@ -1,0 +1,40 @@
+﻿@model Prédio_Comercial.Models.Usuarios;
+
+<h2>Cadastrar Novo Usuário</h2>
+
+
+    <form asp-controller="Usuarios" asp-action="CriarUsuario">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label asp-for="Login" class="form-label">Login</label>
+            <input type="text" asp-for="Login" class="form-control" />
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Password" class="form-label">Pasword</label>
+            <input type="text" asp-for="Password" class="form-control" />
+        </div>
+    </div>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label asp-for="DataContratacao" class="form-label">Data da Contratação</label>
+            <input type="datetime-local" asp-for="DataContratacao" class="form-control" />
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Admin" class="form-label">Administrador?</label>
+            <select class="form-select" asp-for="Admin">
+                <option value="True">Sim</option>
+                <option value="False">Não</option>
+            </select>
+            
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-1">
+            <button type="submit" class="btn btn-success">Salvar</button>
+        </div>
+        
+    </div>
+    </form>
+
+
