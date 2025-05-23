@@ -1,17 +1,36 @@
 ﻿@model Prédio_Comercial.Models.Usuarios;
 
 <h2>Cadastrar Novo Usuário</h2>
+@if (TempData["MenssageSucesso"] != null)
+{
+    <div id="message" class=" container row col-md-5">
+        <div class="alert-success" role="alert">
+            <button class="btn btn-close" id="button"></button>
+            @TempData["MenssageSucesso"]
+        </div>
+    </div>
+}
+@if (TempData["MenssageError"] != null)
+{
+    <div id="message" class=" container row col-md-5">
+        <div class="alert-danger" role="alert">
+            <button class="btn btn-close" id="button"></button>
+            @TempData["MenssageError"]
+        </div>
+    </div>
+}
 
-
-    <form asp-controller="Usuarios" asp-action="CriarUsuario">
+    <form asp-controller="Usuarios" asp-action="CriarUsuario" class="form-control">
     <div class="row g-3">
         <div class="col-md-6">
             <label asp-for="Login" class="form-label">Login</label>
             <input type="text" asp-for="Login" class="form-control" />
+            <span asp-validation-for="Login" class="text-danger">O Login deve ter no mínimo 8 caracteres</span>
         </div>
         <div class="col-md-6">
-            <label asp-for="Password" class="form-label">Pasword</label>
+            <label asp-for="Password" class="form-label">Password</label>
             <input type="text" asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger">A senha deve conter no mínimo 5 caracteres</span>
         </div>
     </div>
     <div class="row g-3">
@@ -23,7 +42,7 @@
             <label asp-for="Admin" class="form-label">Administrador?</label>
             <select class="form-select" asp-for="Admin">
                 <option value="True">Sim</option>
-                <option value="False">Não</option>
+                <option value="false">Não</option>
             </select>
             
         </div>
@@ -36,5 +55,15 @@
         
     </div>
     </form>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
-
+    <script>
+        //Aqui é uma função que pega o elemento que tiver o ID message para fechar, depois pega o elemento que tiver o ID button coloca o evento de click e chama a função 
+        //FecharMensagem.//
+        $(document).ready(function () {
+            function FecharMensagem() {
+                $("#message").hide();
+            }
+        $("#button").click(FecharMensagem);
+        });
+    </script>

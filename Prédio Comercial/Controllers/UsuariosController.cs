@@ -29,7 +29,7 @@ namespace Prédio_Comercial.Controllers
             if(usuarios == null) return NotFound();
             return View(usuarios);
         }
-        public IActionResult Criar()
+        public async Task<IActionResult> Criar()
         {
             return View();
         }
@@ -40,14 +40,16 @@ namespace Prédio_Comercial.Controllers
                 if (ModelState.IsValid)
                 {
                     await _usuarios.Criar(usuarios);
-                    return RedirectToAction("Index");
+                    TempData["MenssageSucesso"] = $"Usuário Criado com Sucesso {usuarios.Login}";
+                    return RedirectToAction("Criar");
                 }
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError(String.Empty, "Nâo foi possível criar usuário");
             }
-            return RedirectToAction("Index");
+            TempData["MenssageError"] = $"Não foi possível criar o usuário {usuarios.Login} verifique os dados";
+            return RedirectToAction("Criar");
         }
 
         public async Task<IActionResult> EditarUsuario(int id)
