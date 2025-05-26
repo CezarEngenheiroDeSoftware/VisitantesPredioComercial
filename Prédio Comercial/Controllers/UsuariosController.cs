@@ -9,9 +9,11 @@ namespace Prédio_Comercial.Controllers
     public class UsuariosController : Controller
     {
         private readonly IUsuarios _usuarios;
-        public UsuariosController(IUsuarios usuarios)
+        private readonly ISessionUsuary _sessionUsuary;
+        public UsuariosController(IUsuarios usuarios, ISessionUsuary sessionUsuary)
         {
             _usuarios = usuarios;
+            _sessionUsuary = sessionUsuary;
         }
         public async Task<IActionResult> Login()
         {
@@ -26,12 +28,13 @@ namespace Prédio_Comercial.Controllers
                 TempData["MensageErro"] = $"Login ou Senha incorreto";
                 return View(usuarios);
             }
+             _sessionUsuary.CriarSessao(login);
             return RedirectToAction("Index", "Visitantes");
 
         }
         public async Task<IActionResult> Index()
         {
-                var viewUsuario = await _usuarios.BuscarTodos();
+                var viewUsuario = _sessionUsuary.BuscarSessao();
                 return View(viewUsuario);
         }
         public async Task<IActionResult> BuscarUsuario(int id)
@@ -48,7 +51,8 @@ namespace Prédio_Comercial.Controllers
         }
         public async Task<IActionResult> Criar()
         {
-            return View();
+            var usuarioLogado = _sessionUsuary.BuscarSessao();
+            return View(usuarioLogado);
         }
         public async Task<IActionResult> CriarUsuario(Usuarios usuarios)
         {

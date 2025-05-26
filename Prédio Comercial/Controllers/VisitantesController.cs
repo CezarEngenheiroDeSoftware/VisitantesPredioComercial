@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Prédio_Comercial.Interface;
 using Prédio_Comercial.Models;
 using Prédio_Comercial.Service;
 

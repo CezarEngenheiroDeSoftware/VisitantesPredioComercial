@@ -19,7 +19,11 @@
         </div>
     </div>
 }
+@if(Model.Admin != null)
+{
+    <p> Bem Vindo @Model.Login</p>
 
+}
     <form asp-controller="Usuarios" asp-action="CriarUsuario" class="form-control">
     <div class="row g-3">
         <div class="col-md-6">
