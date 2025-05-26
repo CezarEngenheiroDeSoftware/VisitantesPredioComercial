@@ -13,6 +13,22 @@ namespace Prédio_Comercial.Controllers
         {
             _usuarios = usuarios;
         }
+        public async Task<IActionResult> Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(Usuarios usuarios)
+        {
+            var login = await _usuarios.Login(usuarios);
+            if(login == null)
+            {
+                TempData["MensageErro"] = $"Login ou Senha incorreto";
+                return View(usuarios);
+            }
+            return RedirectToAction("Index", "Visitantes");
+
+        }
         public async Task<IActionResult> Index()
         {
                 var viewUsuario = await _usuarios.BuscarTodos();

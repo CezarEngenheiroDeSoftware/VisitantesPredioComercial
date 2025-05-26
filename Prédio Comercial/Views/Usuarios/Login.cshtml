@@ -1,0 +1,41 @@
+﻿@model Prédio_Comercial.Models.Usuarios;
+@{
+    Layout = "_Layout - Login";
+}
+@if (TempData["MensageErro"] != null)
+{
+    <div id="message" class=" container row col-md-2">
+        <div class="alert-danger" role="alert">
+            <button id="button" class="btn btn-close"></button>
+            @TempData["MensageErro"]
+        </div>
+    </div>
+}
+<br />
+<form asp-controller="Usuarios" asp-action="Login">
+    <div class="g-4">
+        <div class="col-md-3">
+            <label asp-for="Login" class="form-label">Login</label>
+            <input asp-for="Login" type="text" class="form-control">
+            <span asp-validation-for="Login" class="text-danger">O Login deve ter no mínimo 8 caracteres</span>
+        </div>
+        <div class="col-md-3">
+            <label asp-for="Password" class="form-label"></label>
+            <input asp-for="Password" class="form-control">
+            <span asp-validation-for="Password" class="text-danger">O Password deve ter no mínimo 5 caracteres</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+</form>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+<script>
+    $(document).ready(function() {
+    $("#button").click(function fecharMenssagem() {
+        $("#message").hide();
+    });
+
+
+
+   });
+</script>

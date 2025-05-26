@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Prédio_Comercial.Models.Visitantes>;
 
 <h2 class="card-subtitle">Visitantes No Prédio</h2>
-
+<div class="table-responsive-sm">
 <table class="table table-light">
     <thead>
         <tr>
@@ -50,6 +50,7 @@
         }
     </tbody>
 </table>
+</div>
 <a asp-controller="Visitantes" asp-action="ListaVisitantes" class="btn btn-light">Voltar</a>
 
 <div class="modal fade" id="modalEdicao" tabindex="-1">

@@ -77,5 +77,17 @@ namespace Prédio_Comercial.Repository
                 return builder.ToString();
             }
         }
+
+        public async Task<Usuarios?> Login(Usuarios usuarios)
+        {
+            var loginDigitado = await _context.Usuarios.FirstOrDefaultAsync(x=>x.Login ==  usuarios.Login);
+            if (loginDigitado != null)
+            {
+                usuarios.Password = GerarHash(usuarios.Password);
+                var senhaDigitado = await _context.Usuarios.FirstOrDefaultAsync(x=>x.Password == usuarios.Password);
+                return senhaDigitado;
+            }
+            return null;
+        }
     }
 }
