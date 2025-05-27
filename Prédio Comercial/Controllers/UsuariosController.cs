@@ -28,14 +28,15 @@ namespace Prédio_Comercial.Controllers
                 TempData["MensageErro"] = $"Login ou Senha incorreto";
                 return View(usuarios);
             }
+            _sessionUsuary.RemoverSessao();
              _sessionUsuary.CriarSessao(login);
             return RedirectToAction("Index", "Visitantes");
 
         }
         public async Task<IActionResult> Index()
         {
-                var viewUsuario = _sessionUsuary.BuscarSessao();
-                return View(viewUsuario);
+                
+                return View();
         }
         public async Task<IActionResult> BuscarUsuario(int id)
         {
@@ -51,8 +52,8 @@ namespace Prédio_Comercial.Controllers
         }
         public async Task<IActionResult> Criar()
         {
-            var usuarioLogado = _sessionUsuary.BuscarSessao();
-            return View(usuarioLogado);
+            //var usuarioLogado = _sessionUsuary.BuscarSessao();
+            return View();
         }
         public async Task<IActionResult> CriarUsuario(Usuarios usuarios)
         {
