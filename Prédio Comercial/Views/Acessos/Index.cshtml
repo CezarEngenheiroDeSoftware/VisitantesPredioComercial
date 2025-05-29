@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Prédio_Comercial.Models.Acessos>;
+
+    <h2>Acessos</h2>
+<a asp-controller="Acessos" asp-action="Criar" class="btn btn-primary">AdicionarAcesso</a>
+<div class="col-md-3">
+</div>
+<div class="table-responsive-sm row col-12">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model=>model.SalaComercial)</th>
+                <th>@Html.DisplayNameFor(model=>model.NumeroSalaComercial)</th>
+                <th>@Html.DisplayNameFor(model=>model.EntrouComOQue)</th>
+                <th>Quem realizou o acesso</th>
+                <th>Nome do Visitante</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => x.SalaComercial)</td>
+                    <td>@Html.DisplayFor(model => x.NumeroSalaComercial)</td>
+                    <td>@Html.DisplayFor(model => x.EntrouComOQue)</td>
+                    <td>@Html.DisplayFor(model => (x.Usuarios.Login))</td>
+                    <td>@Html.DisplayFor(model => (x.Visitante.Name))</td>
+                    <td><button class="btn btn-primary">Detalhes</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="col-md-3">
+
