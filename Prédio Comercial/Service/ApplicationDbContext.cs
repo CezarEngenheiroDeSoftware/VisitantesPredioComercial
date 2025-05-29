@@ -11,5 +11,6 @@ namespace Prédio_Comercial.Service
         }
         public DbSet<Visitantes> Visitantes { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Acessos> Acessos { get; set; }
     }
 }
