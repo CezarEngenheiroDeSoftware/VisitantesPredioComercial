@@ -1,0 +1,30 @@
+﻿@model Prédio_Comercial.Models.Acessos;
+
+<h2>Acesso @Html.DisplayFor(x=>x.Usuarios.Login) </h2>
+
+<form asp-controller="" asp-action="" class="row g-3">
+    <div class="col-md-6">
+        <label asp-for="VisitanteId" class="form-label">Nome do Visitante</label>
+        <select asp-for="VisitanteId" asp-items="ViewBag.Visitante" class="form-select"></select>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="UsuariosId" class="form-label">Nome do Atendente</label>
+        <select asp-for="UsuariosId" asp-items="ViewBag.Usuarios" class="form-select"></select>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="SalaComercial" class="form-label">Empresa</label>
+        <input asp-for="SalaComercial" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label type="number" asp-for="NumeroSalaComercial" class="form-label">Número da Sala</label>
+        <input asp-for="NumeroSalaComercial" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label asp-for="EntrouComOQue" class="form-label">Entrou Com o Que</label>
+        <input asp-for="EntrouComOQue" class="form-control" />
+    </div>
+    <div class="col-sm-7">
+@*         <button type="submit" class="btn btn-primary">Salvar</button>
+ *@
+    </div>
+</form>

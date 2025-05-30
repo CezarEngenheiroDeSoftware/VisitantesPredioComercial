@@ -19,6 +19,15 @@ namespace Prédio_Comercial.Controllers
             var Acesso = await _context.Acessos.Include(x=>x.Usuarios).Include(x=>x.Visitante).ToListAsync();
             return View(Acesso);
         }
+        public async Task<IActionResult> Details(int id)
+        {
+            var Visitante = new SelectList(await _context.Visitantes.ToListAsync(), "Id", "Name");
+            var Usuarios = new SelectList(await _context.Usuarios.ToListAsync(), "Id", "Login");
+            ViewBag.Visitante = Visitante;
+            ViewBag.Usuarios = Usuarios;    
+            var acessoId = await _context.Acessos.FindAsync(id);
+            return View(acessoId);
+        }
         public async Task<IActionResult> Criar()
         {
             ViewBag.Visitantes = new SelectList(await _context.Visitantes.ToListAsync(), "Id", "Name");

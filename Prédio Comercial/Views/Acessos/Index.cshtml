@@ -25,11 +25,43 @@
                     <td>@Html.DisplayFor(model => x.EntrouComOQue)</td>
                     <td>@Html.DisplayFor(model => (x.Usuarios.Login))</td>
                     <td>@Html.DisplayFor(model => (x.Visitante.Name))</td>
-                    <td><button class="btn btn-primary">Detalhes</button></td>
+                    <td><button data-id="@x.id" class="btn btn-primary _btnDetails">Detalhes</button></td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
 <div class="col-md-3">
+
+    <div class="modal fade" id="modalEdicao" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Deseja Dar Saída?</h1>
+                <div class="modal-body" id="conteudoModalEdicao">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('._btnDetails').click(function () {
+                const id = $(this).data('id');
+                $.ajax({
+                    type:"GET",
+                    url:"/Acessos/Details/"+id,
+                    success: function (html) {
+                        $('#conteudoModalEdicao').html(html);
+                        $('#modalEdicao').modal('show');
+                    },
+                    error: function () {
+                        alert("Erro ao carregar dados");
+                    }
+                });
+            });
+
+        });
+
+    </script>
 
