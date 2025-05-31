@@ -12,14 +12,14 @@
     </div>
 }
 <br />
-<form asp-controller="Usuarios" asp-action="Login">
+<form asp-controller="Usuarios" asp-action="Login" class="d-flex justify-content-center align-items-center">
     <div class="g-4">
-        <div class="col-md-3">
+        <div class="">
             <label asp-for="Login" class="form-label">Login</label>
             <input asp-for="Login" type="text" class="form-control">
             <span asp-validation-for="Login" class="text-danger">O Login deve ter no mínimo 8 caracteres</span>
         </div>
-        <div class="col-md-3">
+        <div class="">
             <label asp-for="Password" class="form-label"></label>
             <input asp-for="Password" class="form-control">
             <span asp-validation-for="Password" class="text-danger">O Password deve ter no mínimo 5 caracteres</span>

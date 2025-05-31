@@ -9,9 +9,13 @@ namespace Prédio_Comercial.Controllers
     public class VisitantesController : Controller
     {
         private readonly ApplicationDbContext _context;
-        public VisitantesController(ApplicationDbContext applicationDbContext)
+        private readonly IUsuarios _usuarios;
+        private readonly ISessionUsuary _sessionUsuary;
+        public VisitantesController(ApplicationDbContext applicationDbContext, IUsuarios usuarios, ISessionUsuary sessionUsuary)
         {
             _context = applicationDbContext;
+            _usuarios = usuarios;
+            _sessionUsuary = sessionUsuary;
         }
         public IActionResult Index()
         {
@@ -35,6 +39,7 @@ namespace Prédio_Comercial.Controllers
         {
             if(ModelState.IsValid)
             {
+                _sessionUsuary.BuscarSessao();
                 _context.Visitantes.Add(visitantes);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("ListaVisitantes");
@@ -86,17 +91,21 @@ namespace Prédio_Comercial.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeletarVisitante(int? id)
+        public async Task<IActionResult> DeletarVisitante(int? id, Usuarios usuarios)
         {
             if (id == null) return BadRequest();
 
             var visitante = await _context.Visitantes.FindAsync(id);
             if (visitante == null) return NotFound();
+            var UsuarioLogado = _sessionUsuary.BuscarSessao();
+            if (UsuarioLogado.Admin == true)
+            {
+                _context.Visitantes.Remove(visitante);
+                await _context.SaveChangesAsync();
 
-            _context.Visitantes.Remove(visitante);
-            await _context.SaveChangesAsync();
-
-            return Ok();
+                return Ok();
+            }
+            return BadRequest("Opção disponível apenas para Administradores");
         }
     }
 }
