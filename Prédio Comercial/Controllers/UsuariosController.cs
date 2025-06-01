@@ -19,6 +19,10 @@ namespace Prédio_Comercial.Controllers
         {
             return View();
         }
+        public async Task<IActionResult> LayoutNovoTeste()
+        {
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> Login(Usuarios usuarios)
         {

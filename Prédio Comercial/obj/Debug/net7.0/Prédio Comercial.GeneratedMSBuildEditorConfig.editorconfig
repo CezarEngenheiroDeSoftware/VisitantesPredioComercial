@@ -56,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Prédio Comercial/Prédio Comercial/Prédio Comercial/Views/Usuarios/LayoutNovoTeste.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcTGF5b3V0Tm92b1Rlc3RlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Prédio Comercial/Prédio Comercial/Prédio Comercial/Views/Usuarios/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -103,3 +107,7 @@ build_metadata.AdditionalFiles.CssScope = b-r01az2j4g1
 [D:/Prédio Comercial/Prédio Comercial/Prédio Comercial/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-72e6ugimuy
+
+[D:/Prédio Comercial/Prédio Comercial/Prédio Comercial/Views/Shared/_LayoutSistemaNovo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRTaXN0ZW1hTm92by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-ntppvnvzvk
