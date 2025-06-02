@@ -3,6 +3,8 @@
 <h2>Acesso @Html.DisplayFor(x=>x.Usuarios.Login) </h2>
 
 <form asp-controller="" asp-action="" class="row g-3">
+    <input type="hidden" asp-for="id" />
+
     <div class="col-md-6">
         <label asp-for="VisitanteId" class="form-label">Nome do Visitante</label>
         <select asp-for="VisitanteId" asp-items="ViewBag.Visitante" class="form-select"></select>

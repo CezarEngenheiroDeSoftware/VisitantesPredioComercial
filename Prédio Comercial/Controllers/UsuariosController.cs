@@ -21,6 +21,8 @@ namespace Prédio_Comercial.Controllers
         }
         public async Task<IActionResult> LayoutNovoTeste()
         {
+            var usuarios = _usuarios.BuscarTodos();
+            ViewBag.Usuario = usuarios;
             return View();
         }
         [HttpPost]

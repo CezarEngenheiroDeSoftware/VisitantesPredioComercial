@@ -4,50 +4,55 @@
         margin-left: 70px;
         padding: 20px;
     }
+    .formulario{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
 </style>
 
 <div class="content">
     <h2>Lista de Visitantes</h2>
 
-    <div class="">
-            <form asp-controller="Visitantes" asp-action="NovoVisitante" class="col-12">
-                <div class="col-12">
+    <div class="center">
+        <form asp-controller="Visitantes" asp-action="NovoVisitante" class="align-items-center formulario">
+                <div class="col-6">
                     
                         <label asp-for="Name">Nome:</label>
                         <input asp-for="Name" type="text" class="form-control" />
                     
                 </div>
-                <div class="col-12">
+                <div class="col-6">
                     <label asp-for="Documento">RG/CPF:</label>
                     <input asp-for="Documento" type="text" placeholder="000.000.000-00" class="form-control " />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
-                <div class="col-12">
+                <div class="col-6">
                     <label asp-for="Empresa">Empresa</label>
                     <input asp-for="Empresa" type="text" class="form-control" />
                     <span asp-validation-for="Empresa" class="text-danger"></span>
 
                 </div>
                
-                <div class="col-12">
+                <div class="col-6">
                     <label asp-for="Dataentrada">Data da Entrada</label>
                     <input asp-for="Dataentrada" type="datetime-local" class="form-control" />
                     <span asp-validation-for="Dataentrada" class="text-danger"></span>
 
                 </div>
-                <div class="col-12">
+                <div class="col-6">
                     <label asp-for="DataSaida">Data da Saída</label>
                     <input asp-for="DataSaida" type="datetime-local" class="form-control" />
                     <span asp-validation-for="DataSaida" class="text-danger"></span>
 
                 </div>
-                <div class="col-12">
+                <div class="col-6">
                     <label asp-for="MotivoVisita">Motivo da Visita</label>
                     <input asp-for="MotivoVisita" type="text" class="form-control" />
                     <span asp-validation-for="MotivoVisita" class="text-danger"></span>
 
                 </div>
-            <div class="col-12">
+            <div class="col-6">
                 <label asp-for="VisitandoQuem">Quem visitou</label>
                 <input asp-for="VisitandoQuem" type="text" class="form-control" />
                 <span asp-validation-for="VisitandoQuem" class="text-danger"></span>
