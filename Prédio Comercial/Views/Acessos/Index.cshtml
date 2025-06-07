@@ -10,7 +10,7 @@
 <div class="content container-fluid">
     <div class="row">
         <div class="col-md-10">
-            <div class="table-responsive-sm">
+            <div class="table-responsive">
                 <h2>Acessos</h2>
                 <a asp-controller="Acessos" asp-action="Criar" class="btn btn-primary">AdicionarAcesso</a>
                 <table class="table table-dark">
@@ -57,8 +57,9 @@
                             @foreach (var y in Model)
                             {
                                 <tr>
+                                    <td>@y.id</td>
                                     <td><a>@Html.DisplayFor(model=>y.Usuarios.Login)</a></td>
-                                    <td><a asp-controller="Acessos" asp-action="Details" class="btn btn-primary">Detalhes</a></td>
+                                    <td><a type="submit" asp-controller="Usuarios" asp-action="Detalhes" asp-route-id="@y.Usuarios.Id" class="btn btn-primary">Detalhes</a></td>
                                 </tr>
                             }
                         </tbody>
@@ -72,7 +73,7 @@
     <div class="modal fade" id="modalEdicao" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Deseja Dar Saída?</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Detalhes</h1>
                 <div class="modal-body" id="conteudoModalEdicao">
                 </div>
             </div>

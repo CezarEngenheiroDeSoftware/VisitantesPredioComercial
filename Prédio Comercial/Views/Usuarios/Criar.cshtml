@@ -1,5 +1,10 @@
 ﻿@model Prédio_Comercial.Models.Usuarios;
-
+<style>
+    .content{
+        margin-left:70px;
+        padding:20px;
+    }
+</style>
 <h2>
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
         <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0m2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755" />
@@ -28,41 +33,47 @@
     <p> Bem Vindo @Model.Login</p>
 
 } *@
-    <form asp-controller="Usuarios" asp-action="CriarUsuario" class="form-control">
-    <div class="row g-3">
-        <div class="col-md-6">
-            <label asp-for="Login" class="form-label">Login</label>
-            <input type="text" asp-for="Login" class="form-control" />
-            <span asp-validation-for="Login" class="text-danger">O Login deve ter no mínimo 8 caracteres</span>
-        </div>
-        <div class="col-md-6">
-            <label asp-for="Password" class="form-label">Password</label>
-            <input type="text" asp-for="Password" class="form-control" />
-            <span asp-validation-for="Password" class="text-danger">A senha deve conter no mínimo 5 caracteres</span>
+    <div class="content container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+            <form asp-controller="Usuarios" asp-action="CriarUsuario">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="Login" class="form-label">Login</label>
+                        <input type="text" asp-for="Login" class="form-control" />
+                        <span asp-validation-for="Login" class="text-danger">O Login deve ter no mínimo 8 caracteres</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Password" class="form-label">Password</label>
+                        <input type="text" asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger">A senha deve conter no mínimo 5 caracteres</span>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="DataContratacao" class="form-label">Data da Contratação</label>
+                        <input type="datetime-local" asp-for="DataContratacao" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Admin" class="form-label">Administrador?</label>
+                        <select class="form-select" asp-for="Admin">
+                            <option value="True">Sim</option>
+                            <option value="false">Não</option>
+                        </select>
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-1">
+                        <button type="submit" class="btn btn-success">Salvar</button>
+                    </div>
+
+                </div>
+            </form>
+            </div>
         </div>
     </div>
-    <div class="row g-3">
-        <div class="col-md-6">
-            <label asp-for="DataContratacao" class="form-label">Data da Contratação</label>
-            <input type="datetime-local" asp-for="DataContratacao" class="form-control" />
-        </div>
-        <div class="col-md-6">
-            <label asp-for="Admin" class="form-label">Administrador?</label>
-            <select class="form-select" asp-for="Admin">
-                <option value="True">Sim</option>
-                <option value="false">Não</option>
-            </select>
-            
-        </div>
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-1">
-            <button type="submit" class="btn btn-success">Salvar</button>
-        </div>
-        
-    </div>
-    </form>
 
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 

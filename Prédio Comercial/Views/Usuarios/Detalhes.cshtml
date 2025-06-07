@@ -1,0 +1,41 @@
+﻿@model Prédio_Comercial.Models.Usuarios;
+<div class="content container-fluid">
+    <div class="row">
+        <div class="col-md-11">
+            <h2>Atendente @Html.DisplayFor(x=>x.Login) </h2>
+
+            <form asp-controller="" asp-action="">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="Login" class="form-label">Login</label>
+                        <input type="text" asp-for="Login" class="form-control" readonly />
+                        @*<span asp-validation-for="Login" class="text-danger">O Login deve ter no mínimo 8 caracteres</span>*@
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Password" class="form-label">Password</label>
+                        <input type="text" asp-for="Password" class="form-control" readonly />
+                        @* <span asp-validation-for="Password" class="text-danger">A senha deve conter no mínimo 5 caracteres</span> *@
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="DataContratacao" class="form-label">Data da Contratação</label>
+                        <input type="datetime-local" asp-for="DataContratacao" class="form-control" readonly />
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Admin" class="form-label">Administrador?</label>
+                        <select disabled class="form-select" asp-for="Admin">
+                            <option value="True">Sim</option>
+                            <option value="false">Não</option>
+                        </select>
+
+                    </div>
+                </div>
+                <br />
+            </form>
+        </div>
+    </div>
+</div>
+

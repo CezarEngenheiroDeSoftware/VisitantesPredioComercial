@@ -16,6 +16,7 @@ builder.Services.AddSession(options =>
 
 builder.Services.AddScoped<IUsuarios, UsuariosRepository>();
 builder.Services.AddScoped<ISessionUsuary, SessionRepository>();
+builder.Services.AddScoped<IFiltragemDePagina, FilgragemDePaginaRepository>();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

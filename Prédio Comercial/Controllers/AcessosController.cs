@@ -1,17 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Prédio_Comercial.ActionFilter;
+using Prédio_Comercial.Interface;
 using Prédio_Comercial.Models;
 using Prédio_Comercial.Service;
 
 namespace Prédio_Comercial.Controllers
 {
+    [PaginaParaUsuarioAdmin]
     public class AcessosController : Controller
     {
         private readonly ApplicationDbContext _context;
-        public AcessosController(ApplicationDbContext applicationDbContext)
+        private readonly IFiltragemDePagina _filtragemDePagina;
+        public AcessosController(ApplicationDbContext applicationDbContext, IFiltragemDePagina filtragemDePagina)
         {
             _context = applicationDbContext;
+            _filtragemDePagina = filtragemDePagina;
         }
 
         public async Task<IActionResult> Index()
@@ -19,6 +24,7 @@ namespace Prédio_Comercial.Controllers
             var Acesso = await _context.Acessos.Include(x=>x.Usuarios).Include(x=>x.Visitante).ToListAsync();
             return View(Acesso);
         }
+  
         public async Task<IActionResult> Details(int id)
         {
             var Visitante = new SelectList(await _context.Visitantes.ToListAsync(), "Id", "Name");
@@ -26,10 +32,15 @@ namespace Prédio_Comercial.Controllers
             ViewBag.Visitante = Visitante;
             ViewBag.Usuarios = Usuarios;    
             var acessoId = await _context.Acessos.FindAsync(id);
-            return View(acessoId);
+            return PartialView(acessoId);
         }
         public async Task<IActionResult> Criar()
         {
+            var acesso = _filtragemDePagina.Buscar();
+            if(acesso == null)
+            {
+                return RedirectToAction("Index");
+            }
             ViewBag.Visitantes = new SelectList(await _context.Visitantes.ToListAsync(), "Id", "Name");
             ViewBag.Usuarios = new SelectList(await _context.Usuarios.ToListAsync(), "Id", "Login");
 

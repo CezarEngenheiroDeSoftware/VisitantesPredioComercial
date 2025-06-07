@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Prédio_Comercial.ActionFilter;
 using Prédio_Comercial.Interface;
 using Prédio_Comercial.Models;
 using Prédio_Comercial.Repository;
@@ -52,7 +53,7 @@ namespace Prédio_Comercial.Controllers
         }
         public async Task<IActionResult> Detalhes(int id)
         {
-            Usuarios usuarios = await _usuarios.BuscarPorId(id);
+           var usuarios = await _usuarios.BuscarPorId(id);
             if(usuarios == null) return NotFound();
             return View(usuarios);
         }
