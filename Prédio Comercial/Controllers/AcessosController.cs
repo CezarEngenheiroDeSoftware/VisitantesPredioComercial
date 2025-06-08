@@ -8,7 +8,6 @@ using Prédio_Comercial.Service;
 
 namespace Prédio_Comercial.Controllers
 {
-    [PaginaParaUsuarioAdmin]
     public class AcessosController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -36,11 +35,11 @@ namespace Prédio_Comercial.Controllers
         }
         public async Task<IActionResult> Criar()
         {
-            var acesso = _filtragemDePagina.Buscar();
-            if(acesso == null)
-            {
-                return RedirectToAction("Index");
-            }
+            //var acesso = _filtragemDePagina.Buscar();
+            //if(acesso == null)
+            //{
+            //    return RedirectToAction("Index");
+            //}
             ViewBag.Visitantes = new SelectList(await _context.Visitantes.ToListAsync(), "Id", "Name");
             ViewBag.Usuarios = new SelectList(await _context.Usuarios.ToListAsync(), "Id", "Login");
 

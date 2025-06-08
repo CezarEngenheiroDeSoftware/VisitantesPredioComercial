@@ -15,7 +15,7 @@ namespace Prédio_Comercial.Repository
         public Usuarios Buscar()
         {
             Usuarios _CatchUser = _sessionUsuary.BuscarSessao();
-            if(_CatchUser != null || _CatchUser?.Admin != false)
+            if(_CatchUser != null)
             {
                return _CatchUser;
 

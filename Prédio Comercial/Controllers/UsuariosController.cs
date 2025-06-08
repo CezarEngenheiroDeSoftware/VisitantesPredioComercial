@@ -11,10 +11,12 @@ namespace Prédio_Comercial.Controllers
     {
         private readonly IUsuarios _usuarios;
         private readonly ISessionUsuary _sessionUsuary;
-        public UsuariosController(IUsuarios usuarios, ISessionUsuary sessionUsuary)
+        private readonly IFiltragemDePagina _filtragemDePagina;
+        public UsuariosController(IUsuarios usuarios, ISessionUsuary sessionUsuary, IFiltragemDePagina filtragemDePagina)
         {
             _usuarios = usuarios;
             _sessionUsuary = sessionUsuary;
+            _filtragemDePagina = filtragemDePagina;
         }
         public async Task<IActionResult> Login()
         {
@@ -59,6 +61,12 @@ namespace Prédio_Comercial.Controllers
         }
         public async Task<IActionResult> Criar()
         {
+            var _VerifyIsAdmin = _filtragemDePagina.Buscar();
+            if(_VerifyIsAdmin.Admin == false)
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.NameUser = _VerifyIsAdmin.Login;
             //var usuarioLogado = _sessionUsuary.BuscarSessao();
             return View();
         }
