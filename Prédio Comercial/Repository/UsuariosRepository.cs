@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Prédio_Comercial.Interface;
@@ -11,29 +12,36 @@ namespace Prédio_Comercial.Repository
 {
     public class UsuariosRepository : IUsuarios
     {
+        private readonly IMapper _mapper;
         private readonly ApplicationDbContext _context;
-        public UsuariosRepository(ApplicationDbContext applicationDbContext)
+        public UsuariosRepository(ApplicationDbContext applicationDbContext, IMapper mapper)
         {
             _context = applicationDbContext;
+            _mapper = mapper;
         }
 
         public async Task<Usuarios> BuscarPorId(int id)
         {
             var usuarioId = await _context.Usuarios.FindAsync(id);
-            return usuarioId;
+            var usuarioDTO = _mapper.Map<Usuarios>(usuarioId);
+            return usuarioDTO;
         }
 
         public async Task<List<Usuarios>> BuscarTodos()
         {
             var usuarios = await _context.Usuarios.ToListAsync();
+            var usuariosDTO = _mapper.Map<Usuarios>(usuarios);
             return usuarios;
         }
 
-        public async Task<Usuarios> Criar(Usuarios usuarios)
+        public async Task<Usuarios> Criar(UsuariosDTO usuariosDTO)
         {
-            _context.Usuarios.Add(usuarios);
+            var usuario = _mapper.Map<Usuarios>(usuariosDTO);
+            usuario.Password = "12345";
+            usuario.DataContratacao = DateTime.Now;
+            _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
-            return usuarios;
+            return usuario;
         }
 
         public async Task<Usuarios> Deletar(int id, Usuarios usuarios)

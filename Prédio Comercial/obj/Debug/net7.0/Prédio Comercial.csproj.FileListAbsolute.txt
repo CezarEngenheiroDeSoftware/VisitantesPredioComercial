@@ -253,3 +253,6 @@ D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtim
 D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout - Login.cshtml.rz.scp.css
 D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\obj\Debug\net7.0\scopedcss\Views\Shared\_LayoutSistemaNovo.cshtml.rz.scp.css
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\AutoMapper.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Prédio Comercial\Prédio Comercial\Prédio Comercial\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

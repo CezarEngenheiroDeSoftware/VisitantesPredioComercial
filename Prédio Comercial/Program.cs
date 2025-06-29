@@ -2,12 +2,13 @@ using Microsoft.EntityFrameworkCore;
 using Prédio_Comercial.Interface;
 using Prédio_Comercial.Repository;
 using Prédio_Comercial.Service;
+using AutoMapper;
+using Prédio_Comercial;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
 builder.Services.AddSession(options =>
 {
     options.Cookie.HttpOnly = true;
@@ -16,8 +17,11 @@ builder.Services.AddSession(options =>
 
 builder.Services.AddScoped<IUsuarios, UsuariosRepository>();
 builder.Services.AddScoped<ISessionUsuary, SessionRepository>();
+builder.Services.AddScoped<IProprietarios, ProprietariosRepository>();
 builder.Services.AddScoped<IFiltragemDePagina, FilgragemDePaginaRepository>();
 builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {

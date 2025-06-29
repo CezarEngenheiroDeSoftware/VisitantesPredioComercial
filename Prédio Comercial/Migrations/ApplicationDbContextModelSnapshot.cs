@@ -55,6 +55,64 @@ namespace PrédioComercial.Migrations
                     b.ToTable("Acessos");
                 });
 
+            modelBuilder.Entity("Prédio_Comercial.Models.Ocorrencias", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Ativa")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("NomeOcorrencia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ProprietarioId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProprietariosId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProprietariosId");
+
+                    b.ToTable("Ocorrencias");
+                });
+
+            modelBuilder.Entity("Prédio_Comercial.Models.Proprietarios", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Documento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Sala")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VisitantesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Proprietarios");
+                });
+
             modelBuilder.Entity("Prédio_Comercial.Models.Usuarios", b =>
                 {
                     b.Property<int>("Id")
@@ -114,10 +172,15 @@ namespace PrédioComercial.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int?>("ProprietariosId")
+                        .HasColumnType("int");
+
                     b.Property<string>("VisitandoQuem")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProprietariosId");
 
                     b.ToTable("Visitantes");
                 });
@@ -139,6 +202,29 @@ namespace PrédioComercial.Migrations
                     b.Navigation("Usuarios");
 
                     b.Navigation("Visitante");
+                });
+
+            modelBuilder.Entity("Prédio_Comercial.Models.Ocorrencias", b =>
+                {
+                    b.HasOne("Prédio_Comercial.Models.Proprietarios", "Proprietarios")
+                        .WithMany()
+                        .HasForeignKey("ProprietariosId");
+
+                    b.Navigation("Proprietarios");
+                });
+
+            modelBuilder.Entity("Prédio_Comercial.Models.Visitantes", b =>
+                {
+                    b.HasOne("Prédio_Comercial.Models.Proprietarios", "proprietarios")
+                        .WithMany("Visitantes")
+                        .HasForeignKey("ProprietariosId");
+
+                    b.Navigation("proprietarios");
+                });
+
+            modelBuilder.Entity("Prédio_Comercial.Models.Proprietarios", b =>
+                {
+                    b.Navigation("Visitantes");
                 });
 #pragma warning restore 612, 618
         }

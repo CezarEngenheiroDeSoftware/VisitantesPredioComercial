@@ -20,6 +20,8 @@ namespace Prédio_Comercial.Models
         public DateTime? DataSaida { get; set; } = DateTime.Now;
         public string? MotivoVisita { get; set; } = "";
         public string? VisitandoQuem { get; set; } = "";
+        public Proprietarios? proprietarios { get; set; }
+        public int? ProprietariosId { get; set; }
 
     }
 }

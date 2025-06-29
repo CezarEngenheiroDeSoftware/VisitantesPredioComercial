@@ -1,0 +1,46 @@
+﻿@model Prédio_Comercial.Models.Ocorrencias;
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+    .content {
+        margin-left: 70px;
+        padding: 20px;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-12">
+            <div class="card">
+            <h2 class="card-subtitle" style="color:gray;">Cadastrar Ocorrência</h2>
+            <form asp-controller="Ocorrencias" asp-action="CadastrarOcorrencia">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label asp-for="NomeOcorrencia" class="form-label">Local</label>
+                            <input type="text" asp-for="NomeOcorrencia" class="form-control" />
+                            <span class="text-danger" asp-validation-for="NomeOcorrencia">Digite a Nome da Ocorrência</span>
+                        </div>
+                    <div class="col-md-10">
+                        <label asp-for="Descricao" class="form-label">Descrição</label>
+                        <textarea type="text" asp-for="Descricao" class="form-control" rows="6"></textarea>
+                        <span class="text-danger" asp-validation-for="Descricao">Digite a Nome da Ocorrência</span>
+                    </div>
+                    <div class="col-md-3">
+                            <label asp-for="Ativa">Status</label>
+                        <select asp-for="Ativa">
+                            <option value="True">Ativo</option>
+                            <option value="False">Encerrada</option>
+
+                        </select>
+                    </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <button type="submit" class="btn btn-success">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

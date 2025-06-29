@@ -11,57 +11,72 @@
     }
 </style>
 
-<div class="content">
-    <h2>Lista de Visitantes</h2>
+<div class="content container">
+    <div class="row">
+        <div class="col-12">
+            <h2>Lista de Visitantes</h2>
 
-    <div class="center">
-        <form asp-controller="Visitantes" asp-action="NovoVisitante" class="align-items-center formulario">
-                <div class="col-6">
-                    
+            <div class="center">
+                <form asp-controller="Visitantes" asp-action="NovoVisitante" class="align-items-center formulario">
+                    <div class="col-md-6 col-12">
+
                         <label asp-for="Name">Nome:</label>
                         <input asp-for="Name" type="text" class="form-control" />
-                    
-                </div>
-                <div class="col-6">
-                    <label asp-for="Documento">RG/CPF:</label>
-                    <input asp-for="Documento" type="text" placeholder="000.000.000-00" class="form-control " />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <div class="col-6">
-                    <label asp-for="Empresa">Empresa</label>
-                    <input asp-for="Empresa" type="text" class="form-control" />
-                    <span asp-validation-for="Empresa" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <label asp-for="Documento">RG/CPF:</label>
+                        <input asp-for="Documento" type="text" placeholder="000.000.000-00" class="form-control " />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <label asp-for="Empresa">Empresa</label>
+                        <input asp-for="Empresa" type="text" class="form-control" />
+                        <span asp-validation-for="Empresa" class="text-danger"></span>
+
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                        <label asp-for="Dataentrada">Data da Entrada</label>
+                        <input asp-for="Dataentrada" type="datetime-local" class="form-control" />
+                        <span asp-validation-for="Dataentrada" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <label asp-for="DataSaida">Data da Saída</label>
+                        <input asp-for="DataSaida" type="datetime-local" class="form-control" />
+                        <span asp-validation-for="DataSaida" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <label asp-for="MotivoVisita">Motivo da Visita</label>
+                        <input asp-for="MotivoVisita" type="text" class="form-control" />
+                        <span asp-validation-for="MotivoVisita" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <label asp-for="VisitandoQuem">Quem visitou</label>
+                        <input asp-for="VisitandoQuem" type="text" class="form-control" />
+                        <span asp-validation-for="VisitandoQuem" class="text-danger"></span>
+
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-primary" type="submit">Cadastrar</button>
+
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <a asp-controller="Visitantes" asp-action="ListaVisitantes" class="btn btn-light">Ver lista de Visitantes</a>
 
                 </div>
-               
-                <div class="col-6">
-                    <label asp-for="Dataentrada">Data da Entrada</label>
-                    <input asp-for="Dataentrada" type="datetime-local" class="form-control" />
-                    <span asp-validation-for="Dataentrada" class="text-danger"></span>
-
-                </div>
-                <div class="col-6">
-                    <label asp-for="DataSaida">Data da Saída</label>
-                    <input asp-for="DataSaida" type="datetime-local" class="form-control" />
-                    <span asp-validation-for="DataSaida" class="text-danger"></span>
-
-                </div>
-                <div class="col-6">
-                    <label asp-for="MotivoVisita">Motivo da Visita</label>
-                    <input asp-for="MotivoVisita" type="text" class="form-control" />
-                    <span asp-validation-for="MotivoVisita" class="text-danger"></span>
-
-                </div>
-            <div class="col-6">
-                <label asp-for="VisitandoQuem">Quem visitou</label>
-                <input asp-for="VisitandoQuem" type="text" class="form-control" />
-                <span asp-validation-for="VisitandoQuem" class="text-danger"></span>
 
             </div>
-            <button class="btn btn-primary" type="submit">Cadastrar</button>
-            </form>
+        </div>
+
     </div>
-    <a asp-controller="Visitantes" asp-action="ListaVisitantes" class="btn btn-light">Ver lista de Visitantes</a>
-</div>
+    </div>
+    
     
 

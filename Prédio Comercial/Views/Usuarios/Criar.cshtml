@@ -33,7 +33,7 @@
     <p> Bem Vindo @Model.Login</p>
 
 } *@
-    <div class="content container-fluid">
+    <div class="content container-fluid align-content-xxl-center">
         <div class="row">
             <div class="col-md-10">
             <h2 class="card-title">Atendente: @ViewBag.NameUser</h2>
@@ -45,15 +45,15 @@
                         <span asp-validation-for="Login" class="text-danger">O Login deve ter no mínimo 8 caracteres</span>
                     </div>
                     <div class="col-md-6">
-                        <label asp-for="Password" class="form-label">Password</label>
+                       @*  <label asp-for="Password" class="form-label">Password</label>
                         <input type="text" asp-for="Password" class="form-control" />
-                        <span asp-validation-for="Password" class="text-danger">A senha deve conter no mínimo 5 caracteres</span>
+                        <span asp-validation-for="Password" class="text-danger">A senha deve conter no mínimo 5 caracteres</span> *@
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col-md-6">
-                        <label asp-for="DataContratacao" class="form-label">Data da Contratação</label>
-                        <input type="datetime-local" asp-for="DataContratacao" class="form-control" />
+                        @* <label asp-for="DataContratacao" class="form-label">Data da Contratação</label>
+                        <input type="datetime-local" asp-for="DataContratacao" class="form-control" /> *@
                     </div>
                     <div class="col-md-6">
                         <label asp-for="Admin" class="form-label">Administrador?</label>

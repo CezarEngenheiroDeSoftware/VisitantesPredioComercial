@@ -1,0 +1,41 @@
+﻿@model Prédio_Comercial.Models.Proprietarios;
+
+<style>
+    .content {
+        padding: 10px;
+        margin-left: 70px;
+        margin-bottom: 10px;
+    }
+</style>
+<div class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-controller="Proprietarios" asp-action="Update" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="col-md-6">
+                    <label class="form-label" asp-for="Name">Nome</label>
+                    <input class="form-control" asp-for="Name" />
+                    <span asp-validation-for="Name"></span>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" asp-for="Sala">Sala Comercial</label>
+                    <input class="form-control" type="number" asp-for="Sala" />
+                    <span asp-validation-for="Sala"></span>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label" asp-for="Documento">RG / CPF</label>
+                    <input class="form-control" asp-for="Documento" />
+                    <span asp-validation-for="Documento"></span>
+                </div>
+                <div class="col-md-8">
+                    <label asp-for="VisitantesSelecionados" class="form-label">Adicionar Visitantes</label>
+                    <select asp-for="VisitantesSelecionados" asp-items="ViewBag.Visitantes" class="form-select" multiple>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-light">Atualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -70,13 +70,13 @@ namespace Prédio_Comercial.Controllers
             //var usuarioLogado = _sessionUsuary.BuscarSessao();
             return View();
         }
-        public async Task<IActionResult> CriarUsuario(Usuarios usuarios)
+        public async Task<IActionResult> CriarUsuario(UsuariosDTO usuarios)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    usuarios.Password = _usuarios.GerarHash(usuarios.Password);
+                    //usuarios.Password = _usuarios.GerarHash(usuarios.Password);
                     await _usuarios.Criar(usuarios);
                     TempData["MenssageSucesso"] = $"Usuário Criado com Sucesso {usuarios.Login}";
                     return RedirectToAction("Criar");

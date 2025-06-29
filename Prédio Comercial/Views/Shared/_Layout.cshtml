@@ -7,6 +7,7 @@
     <title>@ViewData["Title"] - Prédio_Comercial</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
 </head>
 <body>
     <style>
@@ -50,22 +51,22 @@
     </div>
     <div class="Content container-fluid">
         <div class="row">
-            <div class="col-md-8 box">
-                <main role="main" class="pb-3">
-                    @RenderBody()
-                </main>
-            </div>
-            <div class="col-md-4">
-                <div class="small-box">
-                    @RenderSection("Box1", required:false)
+                <div class=" col-12 col-md-8 box">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
                 </div>
-                <div class="small-box"> 
-                    @RenderSection("Box2", required:false)
+                <div class="col-12 col-md-4">
+                    <div class="small-box">
+                        @RenderSection("Box1", required:false)
+                    </div>
+                    <div class="small-box">
+                        @RenderSection("Box2", required:false)
+                    </div>
+                    <div class="small-box">
+                        @RenderSection("Box3", required:false)
+                    </div>
                 </div>
-                <div class="small-box">
-                    @RenderSection("Box3", required:false)
-                </div>
-            </div>
         </div>
         
         
