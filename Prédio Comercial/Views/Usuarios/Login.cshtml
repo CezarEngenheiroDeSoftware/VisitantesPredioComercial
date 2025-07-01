@@ -12,21 +12,29 @@
     </div>
 }
 <br />
-<form asp-controller="Usuarios" asp-action="Login" class="container-fluid min-vh-100 d-flex justify-content-center align-items-center">
-    <div class="g-4">
-        <div class="">
-            <label asp-for="Login" style="color:white" class="form-label">Login</label>
-            <input asp-for="Login" type="text" class="form-control">
-            <span asp-validation-for="Login" class="text-danger"></span>
+<div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col">
+            <form asp-controller="Usuarios" asp-action="Login" class="">
+                <div class="g-4 m-4">
+                    <div class="input-group input-group-lg mb-3">
+                        @* <label asp-for="Login" style="color:white" class="form-label">Login</label> *@
+                        <input asp-for="Login" placeholder="Login" aria-label="Login" type="text" class="form-control">
+                        <span asp-validation-for="Login" class="text-danger"></span>
+                    </div>
+                    <div class="input-group input-group-lg mb-3">
+                        @* <label asp-for="Password" style="color:white" class="form-label"></label> *@
+                        <input asp-for="Password" placeholder="Password" aria-label="Password" class="form-control">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+            <h10 style="color:white">Desenvolvido por Cezar - 20025</h10>
         </div>
-        <div class="">
-            <label asp-for="Password" style="color:white" class="form-label"></label>
-            <input asp-for="Password" class="form-control">
-            <span asp-validation-for="Password" class="text-danger"></span>
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
     </div>
-</form>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
 <script>
@@ -34,8 +42,5 @@
     $("#button").click(function fecharMenssagem() {
         $("#message").hide();
     });
-
-
-
    });
 </script>

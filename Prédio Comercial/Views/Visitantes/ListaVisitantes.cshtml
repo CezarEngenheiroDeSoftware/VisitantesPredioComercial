@@ -3,7 +3,7 @@
 
     <style>
         .content{
-            margin-left:70px;
+            margin-left:260px;
             padding:20px;
         }
     </style>
@@ -11,18 +11,16 @@
     <div class="content container-fluid">
         <div class="row">
             <div class="col-md-8">
-            <div class="table-responsive-sm">
+                <div class="table-responsive-sm">
                 <h2 class="card-subtitle">Lista De Visitantes</h2>
                 <a asp-controller="Visitantes" asp-action="ListaVisitantesAtivo" class="btn btn-info">Visitantes no Prédio</a>
                 <table class="table table-dark">
                     <thead>
                         <tr>
                             <th>@Html.DisplayNameFor(model=>model.Name)</th>
-                            <th>@Html.DisplayNameFor(model=>model.Documento)</th>
                             <th>@Html.DisplayNameFor(model=>model.Empresa)</th>
                             <th>@Html.DisplayNameFor(model=>model.Dataentrada)</th>
                             <th>@Html.DisplayNameFor(model=>model.DataSaida)</th>
-                            <th>@Html.DisplayNameFor(model=>model.MotivoVisita)</th>
                             <th>@Html.DisplayNameFor(model=>model.VisitandoQuem)</th>
                             <th></th>
                         </tr>
@@ -34,9 +32,6 @@
                                 <td id="Nome">@Html.DisplayFor(modelitem=> x.Name)</td>
 
 
-                                <td>@Html.DisplayFor(modelitem=> x.Documento)</td>
-
-
                                 <td>@Html.DisplayFor(modelitem=> x.Empresa)</td>
 
 
@@ -44,9 +39,6 @@
 
 
                                 <td>@Html.DisplayFor(modelitem=> x.DataSaida)</td>
-
-
-                                <td>@Html.DisplayFor(modelitem=> x.MotivoVisita)</td>
 
 
                                 <td>@Html.DisplayFor(modelitem=> x.VisitandoQuem)</td>
@@ -76,6 +68,41 @@
         </div>
 
     </div>
+    @section Box1{
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-5">
+                <form method="get" asp-action="ListaVisitantes" asp-controller="Visitantes" class="mb-3">
+                        <div class="mb-3">
+                            <label for="documento" class="form-label">Documento RG/CPF:</label>
+                            <input type="text" name="documento" class="form-control" id="documento" required />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Filtrar</button>
+                    </form>
+                </div>
+                <div class="col-4 col-12">
+                    <div class="table-responsive">
+                            <table class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th>@Html.DisplayNameFor(models => models.Name)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                            @foreach(var y in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(models => y.Name)</td>
+                                </tr>
+                            }
+                        </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 
 
 <div class="col-md-3">

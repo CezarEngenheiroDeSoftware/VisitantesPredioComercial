@@ -3,14 +3,14 @@
 
 <style>
     .content{
-        margin-left:70px;
+        margin-left:260px;
         padding:20px;
     }
 </style>
 <div class="content container-fluid">
     <div class="row">
-        <div class="col-md-10">
-            <div class="table-responsive">
+        <div class="col col-lg-8">
+            <div class="table-responsive table-responsive-lg">
                 <h2>Acessos</h2>
                 <a asp-controller="Acessos" asp-action="Criar" class="btn btn-primary">AdicionarAcesso</a>
                 <table class="table table-dark">
@@ -67,6 +67,41 @@
             </div>
         </div>
     </div>
+    }
+    @section Box2{
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-sm-12 com-md-12">
+                    <div>
+                        <table class="table-responsive table-responsive-lg">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Nome
+                                    </th>
+                                    <th>
+                                        Data da Entrda
+                                    </th>
+                                    <th>
+                                        Data da Saída
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var z in Model)
+                                {
+                                    <tr>
+                                        <td>@z.Visitante.Name</td>
+                                        <td>@z.Visitante.Dataentrada</td>
+                                        <td>@z.Visitante.DataSaida</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
 <div class="col-md-3">
 

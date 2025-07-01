@@ -11,22 +11,33 @@ namespace Prédio_Comercial.Controllers
         private readonly ApplicationDbContext _context;
         private readonly IUsuarios _usuarios;
         private readonly ISessionUsuary _sessionUsuary;
-        public VisitantesController(ApplicationDbContext applicationDbContext, IUsuarios usuarios, ISessionUsuary sessionUsuary)
+        public readonly ILogger<VisitantesController> _logger;
+        public VisitantesController(ApplicationDbContext applicationDbContext, IUsuarios usuarios, ISessionUsuary sessionUsuary, ILogger<VisitantesController> logger)
         {
             _context = applicationDbContext;
             _usuarios = usuarios;
             _sessionUsuary = sessionUsuary;
+            _logger = logger;
+
         }
         public IActionResult Index()
         {
             return View();
         }
-        public async Task<IActionResult> ListaVisitantes()
+        public async Task<IActionResult> ListaVisitantes(string documento)
         {
-            //var visitasAtivas = await _context.Visitantes.Where(x=>x.DataSaida == null).ToListAsync();
-            //return View(visitasAtivas);
+            if (!string.IsNullOrEmpty(documento))
+            {
+                var lista = _context.Visitantes.Where(x=>x.Documento!.Contains(documento)).ToList();
+                return View(lista);
+            }
             
             return View(await _context.Visitantes.ToListAsync());
+        }
+        public IActionResult ListaVisitantesFilter(string documento)
+        {
+            var Lista = _context.Visitantes!.Where(a=>a.Documento == documento).ToList();
+            return View(Lista);
         }
         public async Task<IActionResult> ListaVisitantesAtivo()
         {
@@ -39,6 +50,7 @@ namespace Prédio_Comercial.Controllers
         {
             if(ModelState.IsValid)
             {
+                _logger.LogInformation($"Visitante: {visitantes.Name} Cadastrado com sucesso");
                 _sessionUsuary.BuscarSessao();
                 _context.Visitantes.Add(visitantes);
                 await _context.SaveChangesAsync();
@@ -100,6 +112,7 @@ namespace Prédio_Comercial.Controllers
             var UsuarioLogado = _sessionUsuary.BuscarSessao();
             if (UsuarioLogado.Admin == true)
             {
+                _logger.LogInformation($"Visitante: {visitante.Name} deletado com sucesso");
                 _context.Visitantes.Remove(visitante);
                 await _context.SaveChangesAsync();
 

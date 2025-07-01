@@ -38,8 +38,9 @@ namespace Prédio_Comercial.Repository
         {
             var usuario = _mapper.Map<Usuarios>(usuariosDTO);
             usuario.Password = "12345";
+            usuario.Password = GerarHash(usuario.Password);
             usuario.DataContratacao = DateTime.Now;
-            _context.Usuarios.Add(usuario);
+            await _context.Usuarios.AddAsync(usuario);
             await _context.SaveChangesAsync();
             return usuario;
         }
