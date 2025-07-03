@@ -24,7 +24,7 @@ namespace Prédio_Comercial.ActionFilter
                 }
                 if (usuarios.Admin != true)
                 {
-                    context.Result = new RedirectResult("/Usuarios/Index");
+                    context.Result = new RedirectResult("/Usuarios/Index"); 
                 }
             }
             base.OnActionExecuting(context);

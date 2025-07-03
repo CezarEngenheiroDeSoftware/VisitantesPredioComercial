@@ -37,7 +37,6 @@ namespace Prédio_Comercial.Repository
         public async Task<Usuarios> Criar(UsuariosDTO usuariosDTO)
         {
             var usuario = _mapper.Map<Usuarios>(usuariosDTO);
-            usuario.Password = "12345";
             usuario.Password = GerarHash(usuario.Password);
             usuario.DataContratacao = DateTime.Now;
             await _context.Usuarios.AddAsync(usuario);

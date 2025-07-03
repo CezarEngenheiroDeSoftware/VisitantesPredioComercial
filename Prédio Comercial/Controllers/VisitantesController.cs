@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Prédio_Comercial.ActionFilter;
 using Prédio_Comercial.Interface;
 using Prédio_Comercial.Models;
 using Prédio_Comercial.Service;
@@ -103,6 +104,7 @@ namespace Prédio_Comercial.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [PaginaParaUsuarioAdmin]
         public async Task<IActionResult> DeletarVisitante(int? id, Usuarios usuarios)
         {
             if (id == null) return BadRequest();

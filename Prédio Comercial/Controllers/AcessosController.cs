@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Prédio_Comercial.ActionFilter;
@@ -12,16 +13,19 @@ namespace Prédio_Comercial.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IFiltragemDePagina _filtragemDePagina;
-        public AcessosController(ApplicationDbContext applicationDbContext, IFiltragemDePagina filtragemDePagina)
+        private readonly IMapper _Mapper;
+        public AcessosController(ApplicationDbContext applicationDbContext, IFiltragemDePagina filtragemDePagina, IMapper mapper)
         {
             _context = applicationDbContext;
             _filtragemDePagina = filtragemDePagina;
+            _Mapper = mapper;
         }
 
         public async Task<IActionResult> Index()
         {
             var Acesso = await _context.Acessos.Include(x=>x.Usuarios).Include(x=>x.Visitante).ToListAsync();
-            return View(Acesso);
+            var _AcessoMapeado = _Mapper.Map<List<AcessosGetDTO>>(Acesso);
+            return View(_AcessoMapeado);
         }
   
         public async Task<IActionResult> Details(int id)

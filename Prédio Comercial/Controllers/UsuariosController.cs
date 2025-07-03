@@ -77,6 +77,7 @@ namespace Prédio_Comercial.Controllers
                 if (ModelState.IsValid)
                 {
                     //usuarios.Password = _usuarios.GerarHash(usuarios.Password);
+
                     await _usuarios.Criar(usuarios);
                     TempData["MenssageSucesso"] = $"Usuário Criado com Sucesso {usuarios.Login}";
                     return RedirectToAction("Criar");

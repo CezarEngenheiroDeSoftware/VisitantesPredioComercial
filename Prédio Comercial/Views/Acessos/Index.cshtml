@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Prédio_Comercial.Models.Acessos>;
+﻿@model IEnumerable<Prédio_Comercial.Models.AcessosGetDTO>;
 
 
 <style>
@@ -9,7 +9,7 @@
 </style>
 <div class="content container-fluid">
     <div class="row">
-        <div class="col col-lg-8">
+        <div class="col col-lg-12">
             <div class="table-responsive table-responsive-lg">
                 <h2>Acessos</h2>
                 <a asp-controller="Acessos" asp-action="Criar" class="btn btn-primary">AdicionarAcesso</a>
@@ -17,7 +17,6 @@
                     <thead>
                         <tr>
                             <th>@Html.DisplayNameFor(model=>model.SalaComercial)</th>
-                            <th>@Html.DisplayNameFor(model=>model.NumeroSalaComercial)</th>
                             <th>@Html.DisplayNameFor(model=>model.EntrouComOQue)</th>
                             <th>Quem realizou o acesso</th>
                             <th>Nome do Visitante</th>
@@ -29,10 +28,9 @@
                         {
                             <tr>
                                 <td>@Html.DisplayFor(model => x.SalaComercial)</td>
-                                <td>@Html.DisplayFor(model => x.NumeroSalaComercial)</td>
                                 <td>@Html.DisplayFor(model => x.EntrouComOQue)</td>
-                                <td>@Html.DisplayFor(model => (x.Usuarios.Login))</td>
-                                <td>@Html.DisplayFor(model => (x.Visitante.Name))</td>
+                                <td>@Html.DisplayFor(model => (x.NomeUsuario))</td>
+                                <td>@Html.DisplayFor(model => (x.NomeVisitante))</td>
                                 <td><button data-id="@x.id" class="btn btn-primary _btnDetails">Detalhes</button></td>
                             </tr>
                         }
@@ -49,7 +47,7 @@
                     <table class="table-responsive">
                         <thead>
                             <tr>
-                                <th>@Html.DisplayNameFor(model=>model.Usuarios.Login)</th>
+                                <th>@Html.DisplayNameFor(model=>model.NomeUsuario)</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -58,8 +56,8 @@
                             {
                                 <tr>
                                     <td>@y.id</td>
-                                    <td><a>@Html.DisplayFor(model=>y.Usuarios.Login)</a></td>
-                                    <td><a type="submit" asp-controller="Usuarios" asp-action="Detalhes" asp-route-id="@y.Usuarios.Id" class="btn btn-primary">Detalhes</a></td>
+                                    <td><a>@Html.DisplayFor(model=>y.NomeUsuario)</a></td>
+                                    <td><a type="submit" asp-controller="Usuarios" asp-action="Detalhes" asp-route-id="@y.id" class="btn btn-primary">Detalhes</a></td>
                                 </tr>
                             }
                         </tbody>
@@ -79,21 +77,13 @@
                                     <th>
                                         Nome
                                     </th>
-                                    <th>
-                                        Data da Entrda
-                                    </th>
-                                    <th>
-                                        Data da Saída
-                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach(var z in Model)
                                 {
                                     <tr>
-                                        <td>@z.Visitante.Name</td>
-                                        <td>@z.Visitante.Dataentrada</td>
-                                        <td>@z.Visitante.DataSaida</td>
+                                        <td>@z.NomeVisitante</td>
                                     </tr>
                                 }
                             </tbody>
