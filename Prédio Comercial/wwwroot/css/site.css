@@ -48,3 +48,85 @@ linha-sem-saida {
         margin-left: -0px !important;
     }*/
 }
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bd-violet-bg);
+    --bs-tooltip-color: var(--bs-white);
+}
+.tooltipCustom {
+    height: 20px;
+    width: 70px;
+    display: none;
+    background-color: #121212;
+    text-decoration-color: white;
+    text-align: center;
+    font-size: 11px;
+    position: fixed;
+    z-index: 1;
+}
+
+.tooltipCustomEdit {
+    height: 20px;
+    width: 70px;
+    display: none;
+    background-color: #121212;
+    text-decoration-color: white;
+    text-align: center;
+    font-size: 11px;
+    position: fixed;
+    z-index: 1;
+}
+
+.btnCustonEdit {
+    width: 23px;
+    height: 23px;
+    border-radius: 100%;
+    background-color: #2196f3;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+    .btnCustonEdit:hover {
+        padding: 2px;
+        background-color: #21f3e7;
+        transition: 2s;
+    }
+
+.btnCustomDelet {
+    width: 23px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #ff3a1e;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 5px;
+    height: min-content;
+    text-align: center;
+    cursor: pointer;
+}
+
+    .btnCustomDelet:hover {
+        background-color: #bd0003;
+        transition: 2s;
+    }
+    .card {
+     background-color:#1e1e1e;
+     margin-right:5px;
+     margin-left:5px;
+     margin-bottom: 5px;
+     border: 3px solid white;
+     border-radius: 10px;
+     text-align: center;
+    }
+._BotaoMensagemFechar{
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 27px;
+    width: 30px;
+    border-color: white;
+}

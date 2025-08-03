@@ -2,6 +2,7 @@
 using Prédio_Comercial.ActionFilter;
 using Prédio_Comercial.Interface;
 using Prédio_Comercial.Models;
+using Prédio_Comercial.Models.DTO;
 using Prédio_Comercial.Repository;
 using Prédio_Comercial.Service;
 

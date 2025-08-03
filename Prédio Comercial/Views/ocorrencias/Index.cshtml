@@ -68,11 +68,11 @@
 </div>
 <!--Aqui é o MODAL que vai abrir o formulário para Edição-->
 
-<div class="modal fade" id="modalEdicao" tabindex="-1">
+<div class="modal fade" id="modalCadastro" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Deseja Editar Visitante?</h1>
-            <div class="modal-body" id="conteudoModalEdicao">
+            <div class="modal-body" id="conteudoModalCadastro">
             </div>
         </div>
     </div>
@@ -99,8 +99,8 @@
                 type: "GET",
                 url: "/Ocorrencias/Cadastrar/",
                 success: function (html) {
-                    $('#conteudoModalEdicao').html(html);
-                    $('#modalEdicao').modal('show');
+                    $('#conteudoModalCadastro').html(html);
+                    $('#modalCadastro').modal('show');
                 },
                 error: function () {
                     alert("Erro ao carregar formulário.");
@@ -115,7 +115,7 @@
                 url: "/Ocorrencias/CadastrarOcorrencia/",
                 data: $("#CadastrarOcorrencia").serialize(),
                 success: function (response) {
-                    $('#modalEdicao').modal('hide');
+                    $('#modalCadastro').modal('hide');
                     location.reload();
                 },
                 error: function (xhr) {

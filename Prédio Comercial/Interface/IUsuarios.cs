@@ -1,4 +1,5 @@
 ﻿using Prédio_Comercial.Models;
+using Prédio_Comercial.Models.DTO;
 
 namespace Prédio_Comercial.Interface
 {

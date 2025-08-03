@@ -1,0 +1,67 @@
+﻿@model Prédio_Comercial.Models.Visitantes;
+
+<div class="container">
+    <div class="row">
+        @if (ViewBag.Mensagem != null)
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="MensagenWarning alert alert-warning" role="alert">
+                        <button style="display=block;" class="_BotaoMensagemFechar">X</button>
+                        @ViewBag.Mensagem
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="col-12">
+            <form asp-controller="Visitantes" asp-action="Detalhes">
+                <input type="hidden" asp-for="Id" />
+                <div class="col-md-6">
+
+                    <label asp-for="Name">Nome:</label>
+                    <input asp-for="Name" type="text" readonly class="form-control" />
+
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Documento">RG/CPF:</label>
+                    <input asp-for="Documento" type="text" readonly placeholder="000.000.000-00" class="form-control " />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Empresa">Empresa</label>
+                    <input asp-for="Empresa" type="text" readonly class="form-control" />
+                    <span asp-validation-for="Empresa" class="text-danger"></span>
+
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="Dataentrada">Data da Entrada</label>
+                    <input asp-for="Dataentrada" readonly type="datetime-local" class="form-control" />
+                    <span asp-validation-for="Dataentrada" class="text-danger"></span>
+
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="DataSaida">Data da Saída</label>
+                    <input asp-for="DataSaida" type="datetime-local" readonly class="form-control" />
+                    <span asp-validation-for="DataSaida" class="text-danger"></span>
+
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="MotivoVisita">Motivo da Visita</label>
+                    <input asp-for="MotivoVisita" readonly type="text" class="form-control" />
+                    <span asp-validation-for="MotivoVisita" class="text-danger"></span>
+
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="VisitandoQuem">Quem visitou</label>
+                    <input asp-for="VisitandoQuem" readonly type="text" class="form-control" />
+                    <span asp-validation-for="VisitandoQuem" class="text-danger"></span>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+                   

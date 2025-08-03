@@ -5,7 +5,7 @@ namespace Prédio_Comercial.Interface
 {
     public interface IProprietarios
     {
-       Task<List<Proprietarios>> BuscarTodosProprietarios();
+        Task<List<Proprietarios>> BuscarTodosProprietarios();
         Task<Proprietarios> BuscarPorId(int id);
         Task<Proprietarios> AdicionarProprietario(Proprietarios proprietario);
         Task<Proprietarios> RemoverProprietario(int id, Proprietarios proprietarios);

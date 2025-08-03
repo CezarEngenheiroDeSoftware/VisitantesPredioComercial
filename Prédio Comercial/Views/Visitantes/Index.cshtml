@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-12">
             <h2>Lista de Visitantes</h2>
-
+           
             <div class="center">
                 <form asp-controller="Visitantes" asp-action="NovoVisitante" class="align-items-center formulario">
                     <div class="col-md-6 col-12">
@@ -38,7 +38,7 @@
 
                     <div class="col-md-6 col-12">
                         <label asp-for="Dataentrada">Data da Entrada</label>
-                        <input asp-for="Dataentrada" type="datetime-local" class="form-control" />
+                        <input asp-for="Dataentrada" type="date" class="form-control" />
                         <span asp-validation-for="Dataentrada" class="text-danger"></span>
 
                     </div>

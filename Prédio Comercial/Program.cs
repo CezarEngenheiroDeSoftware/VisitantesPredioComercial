@@ -19,6 +19,8 @@ builder.Services.AddScoped<IUsuarios, UsuariosRepository>();
 builder.Services.AddScoped<ISessionUsuary, SessionRepository>();
 builder.Services.AddScoped<IProprietarios, ProprietariosRepository>();
 builder.Services.AddScoped<IFiltragemDePagina, FilgragemDePaginaRepository>();
+builder.Services.AddScoped<ILoggerService, LogerServiceRepository>();
+builder.Services.AddScoped<IDashBoardDTO, DashBoardDTORepository>();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));

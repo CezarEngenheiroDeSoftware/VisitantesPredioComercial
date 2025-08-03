@@ -22,7 +22,7 @@ namespace Prédio_Comercial.Controllers
         {
             var ocorrencias = _context.Ocorrencias.ToList();
             ViewBag.ocorrencias = new SelectList(ocorrencias);
-            return PartialView();
+            return PartialView("cadastrar");
         }
         public async Task<IActionResult> CadastrarOcorrencia(Ocorrencias ocorrencias)
         {

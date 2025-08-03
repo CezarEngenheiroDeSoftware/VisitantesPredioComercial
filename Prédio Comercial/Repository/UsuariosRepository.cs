@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Prédio_Comercial.Interface;
 using Prédio_Comercial.Models;
+using Prédio_Comercial.Models.DTO;
 using Prédio_Comercial.Service;
 using System.Security.Cryptography;
 using System.Text;
@@ -38,7 +39,6 @@ namespace Prédio_Comercial.Repository
         {
             var usuario = _mapper.Map<Usuarios>(usuariosDTO);
             usuario.Password = GerarHash(usuario.Password);
-            usuario.DataContratacao = DateTime.Now;
             await _context.Usuarios.AddAsync(usuario);
             await _context.SaveChangesAsync();
             return usuario;

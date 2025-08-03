@@ -1,0 +1,102 @@
+﻿@model Prédio_Comercial.Models.DTO.DashBoardDTO;
+
+<h2>DashBoard</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model=>model.VisitantesName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model=>model.ProprietariosName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model=>model.UsuariosLogin)
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                @foreach (var a in Model.VisitantesName)
+                                {
+                                    <li>@a</li>
+
+                                }
+                            </td>
+                            <td>
+                            @foreach(var a in Model.ProprietariosName)
+                            {
+                                    <li>@a</li>
+                            }
+                            </td>
+                            <td>
+                            @foreach(var a in Model.UsuariosLogin)
+                            {
+                                    <li>@a</li>
+                            }
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h7 class="card-title">Total de Acessos</h7>
+                    <h4 class="card-text">@Model.TotalAcessos</h4>
+                    <a href="#" class="btn btn-primary">Detalhes</a>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h7 class="card-title">Total de Proprietários</h7>
+                    <h4 class="card-text">@Model.TotalProprietarios</h4>
+                    <a href="#" class="btn btn-primary">Detalhes</a>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h7 class="card-title">Total de Visitantes</h7>
+                    <h4 class="card-text">@Model.TotalVisitantes</h4>
+                    <a href="#" class="btn btn-primary">Detalhes</a>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h7 class="card-title">Total de Usuarios</h7>
+                    <h4 class="card-text">@Model.TotalUsuarios</h4>
+                    <a href="#" class="btn btn-primary">Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section box1{
+    <h5>Filtrar Total de Visitantes</h5>
+    <form method="get" asp-action="Index" asp-controller="DashBoardDTO">
+        <label for="date" class="form-label"></label>
+        <input type="datetime-local" name="date" class="form-control" />
+        <button class="btnCustonEdit" type="submit"></button>
+    </form>
+}
+@section box2{
+    <h5>Filtrar Total de Usuarios</h5>
+    <form method="get" asp-action="Index" asp-controller="DashBoardDTO">
+        <label for="date" class="form-label"></label>
+        <input type="datetime-local" name="date" class="form-control" />
+        <button class="btnCustonEdit" type="submit"></button>
+    </form>
+}

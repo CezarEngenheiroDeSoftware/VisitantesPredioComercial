@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Prédio_Comercial.Models.LogAuditoria>;
+
+
+<h2>AUDITORIA</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model=>model.Menssage)</th>
+                        <th>@Html.DisplayNameFor(model=>model.CreatedAt)</th>
+                        <th>@Html.DisplayNameFor(model=>model.NomeAtendente)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        @foreach(var a in Model)
+                        {
+                        <tr>
+                            <td>@Html.DisplayFor(model=>a.Menssage)</td>
+                            <td>@Html.DisplayFor(model=>a.CreatedAt)</td>
+                            <td>@Html.DisplayFor(model=>a.NomeAtendente)</td>
+
+                        </tr>
+                        }
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section box1{
+    <div class="container">
+        <div class="row">
+            <form method="get" asp-action="Logger" asp-controller="Dashboard">
+                <label for="date" class="form-label">Selecione a Data:</label>
+                <input class="form-control" type="date" name="date" />
+                <button type="submit" class="btn btn-dark">filtrar</button>
+            </form>
+            @if (ViewData["Data"] != null)
+            {
+                <h5>A data selecionada @ViewData["Data"]</h5>
+            }
+        </div>
+    </div>
+}

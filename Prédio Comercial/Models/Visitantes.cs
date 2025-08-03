@@ -15,7 +15,7 @@ namespace Prédio_Comercial.Models
         public string? Empresa { get; set; }
         [Required]
         [DataType(DataType.Date)]
-        public DateTime Dataentrada { get; set; } = DateTime.Now;
+        public DateTime Dataentrada { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime? DataSaida { get; set; } = DateTime.Now;
         public string? MotivoVisita { get; set; } = "";

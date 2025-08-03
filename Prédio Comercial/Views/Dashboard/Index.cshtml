@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Prédio_Comercial.Models.Acessos>
+
+<div class="content container-fluid">
+    <div class="row">
+        <div class="col col-lg-12">
+            <div class="table-responsive table-responsive-lg">
+                <h2>Acessos Realizados</h2>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model=>model.Usuarios!.Admin)</th>
+                            <th>@Html.DisplayNameFor(model=>model.Visitante!.Name)</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            @foreach (var model in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(mod=>model.Usuarios!.Admin)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(mod=>model.Visitante!.Name)
+                                </td>
+                                <td></td>
+                            </tr>
+                            }
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section box1{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="card-title">Auditoria</h2>
+                <p>Confira todos as ações dos administradores</p>
+                <a asp-action="Logger" asp-controller="Dashboard">Auditoria dos Admins</a>
+            </div>
+        </div>
+    </div>
+}
+@section box2{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>Lista de Atendentes</h3>
+                            @if (ViewData["ItemCount"] != null)
+                            {
+                                <p>Quantidade de Acessos: @ViewData["ItemCount"]</p>
+                            }
+                        </div>
+                        
+                    </div>
+                   
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model=>model.Usuarios.Login)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var b in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(model=>b.Usuarios.Login)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}
